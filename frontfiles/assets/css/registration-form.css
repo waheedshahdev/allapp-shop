@@ -1,0 +1,922 @@
+/* ------------------------------Common style ---------------------------*/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+* {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 980px;
+}
+
+form {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 30px;
+}
+
+.mt-lg {
+  margin-top: 60px;
+}
+
+.danger {
+  color: red;
+}
+
+
+
+
+/* ---------------------------html input range styling ------------------------------------*/
+
+/* default */
+input[type='range'] {
+  width: 100%;
+}
+
+/* plugin theme  */
+
+.html-inupt-range {
+  position: relative;
+  height: 15px;
+}
+
+.html-inupt-range input[type='range'] {
+  -webkit-appearance: none;
+  height: 6px;
+  margin: 0;
+  background: #a29bfe;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.24);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.html-inupt-range input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.24);
+  background-image: linear-gradient(to bottom, #6c5ce7 0, #6c5ce7 100%);
+  border-radius: 50%;
+}
+
+.html-input-range-custom input[type='range'] {
+  position: relative;
+  z-index: 99;
+  opacity: 0;
+}
+
+.html-input-range-custom .hir-tracker-bg,
+.html-input-range-custom .hir-tracker-bg::after,
+.html-input-range-custom .hir-tracker-bg::before {
+  position: absolute;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.24);
+}
+
+.html-input-range-custom .hir-tracker-bg {
+  top: 10px;
+  left: -7px;
+  width: calc(100% + 15px);
+  height: 6px;
+  background-color: #a29bfe;
+  border-radius: 5px;
+}
+
+.html-input-range-custom .hir-tracker-bg::after,
+.html-input-range-custom .hir-tracker-bg::before {
+  content: '';
+  z-index: 1;
+  top: -4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.24);
+}
+
+.html-input-range-custom .hir-tracker-bg::before {
+  left: 0;
+}
+
+.html-input-range-custom .hir-tracker-bg::after {
+  right: 0;
+}
+
+.html-input-range-custom .hir-tracker-thumb,
+.html-input-range-custom .hir-tracker-thumb::after {
+  position: absolute;
+  background-color: #6c5ce7;
+}
+
+.html-input-range-custom .hir-tracker-thumb {
+  top: 10px;
+  left: 0;
+  width: 0;
+  height: 6px;
+  transition: width 150ms linear;
+}
+
+.html-input-range-custom .hir-tracker-thumb::after {
+  content: '';
+  z-index: 2;
+  top: -4px;
+  right: -7px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.html-inupt-range .tooltip,
+.html-inupt-range .tooltip::after,
+.html-inupt-range .tooltip::before {
+  position: absolute;
+}
+
+.html-inupt-range .tooltip {
+  z-index: 1;
+  top: -32px;
+  left: 0;
+  padding: 5px 12px;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color:#fff !important;
+  box-shadow: 0 0 3px #fff !important;
+  border-radius: 10px;
+  transition: left 100ms linear;
+  opacity:1;
+}
+
+.html-inupt-range .tooltip::after,
+.html-inupt-range .tooltip::before {
+  content: '';
+  width: 0;
+  height: 0;
+}
+
+.html-inupt-range .tooltip::after {
+  bottom: -4px;
+  left: calc(50% - 4px);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #fff;
+}
+
+.html-inupt-range .tooltip::before {
+  bottom: -5px;
+  left: calc(50% - 5px);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #f1f1f1;
+}
+
+.html-input-range-custom .hir-labels {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.html-input-range-custom .hir-labels {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+}
+
+[class*='col-'] {
+  float: left;
+}
+
+.col-10 {
+  width: 10%;
+}
+
+.col-9 {
+  width: 11.1111111111%;
+}
+
+.col-8 {
+  width: 12.5%;
+}
+
+.col-7 {
+  width: 14.285714286%;
+}
+
+.col-6 {
+  width: 16.666666667%;
+}
+
+.col-5 {
+  width: 20%;
+}
+
+.col-4 {
+  width: 25%;
+}
+
+.col-3 {
+  width: 33.333333%;
+}
+
+.col-2 {
+  width: 50%;
+}
+
+.col-1 {
+  width: 100%;
+}
+
+.html-input-range-custom .hir-labels li {
+  position: relative;
+  height: 6px;
+}
+
+.html-input-range-custom .hir-labels li::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  right: -7px;
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border: 1px solid #a29bfe;
+  border-radius: 50%;
+}
+
+.html-input-range-custom .hir-labels li::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.html-input-range-custom .hir-labels li:last-child::after {
+  display: none;
+}
+
+/* helper styles */
+
+input[type='range'] + p {
+  font-size: 12px;
+  color: #666;
+}
+
+
+ /*---------------  CSS END ----------------------*/
+
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    background-size: auto;
+    background-image: url('../assets/images/slider4.jpg'); /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #6441A5, #2a0845); /* Chrome 10-25, Safari 5.1-6 */
+}
+
+body {
+    font-family: montserrat, arial, verdana;
+    background: transparent !important;
+}
+
+/*form styles*/
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+
+    /*stacking fieldsets above each other*/
+    position: relative;
+}
+
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+/*inputs*/
+#msform input, #msform textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+#msform input:focus, #msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #ee0979;
+    outline-width: 0;
+    transition: All 0.5s ease-in;
+    -webkit-transition: All 0.5s ease-in;
+    -moz-transition: All 0.5s ease-in;
+    -o-transition: All 0.5s ease-in;
+}
+
+/*buttons*/
+#msform .action-button {
+    width: 100px;
+    background: #ee0979;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#msform .action-button:hover, #msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #ee0979;
+}
+
+#msform .action-button-previous {
+    width: 100px;
+    background: #C5C5F1;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#msform .action-button-previous:hover, #msform .action-button-previous:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #C5C5F1;
+}
+
+/*headings*/
+.fs-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/*progressbar*/
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+}
+
+#progressbar li {
+    list-style-type: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 33.33%;
+    float: left;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 24px;
+    height: 24px;
+    line-height: 26px;
+    display: block;
+    font-size: 12px;
+    color: #333;
+    background: white;
+    border-radius: 25px;
+    margin: 0 auto 10px auto;
+}
+
+/*progressbar connectors*/
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1; /*put it behind the numbers*/
+}
+
+#progressbar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none;
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before, #progressbar li.active:after {
+    background: #ee0979;
+    color: white;
+}
+
+
+/* Not relevant to this form */
+.dme_link {
+    margin-top: 30px;
+    text-align: center;
+}
+.dme_link a {
+    background: #FFF;
+    font-weight: bold;
+    color: #ee0979;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 5px 25px;
+    font-size: 12px;
+}
+
+.dme_link a:hover, .dme_link a:focus {
+    background: #C5C5F1;
+    text-decoration: none;
+}
+
+
+
+
+/*------------Range selector css--------------------*/
+
+.tooltip{
+    opacity: 1;
+}
+
+
+#imageform input{
+    border: 5px solid #ba9cf3!important;
+    border-radius: 1.25rem;
+}
+#imageform input:hover{
+    border: 5px solid lightblue!important;
+}
+
+
+.highlight{
+    border:solid 1px red; margin:10px;
+}
+.selected{
+   border: 5px solid #28a745!important;
+}
+
+
+
+
+
+
+#buttonclick img:hover{
+    border:5px solid gray;
+}
+/* Style the form */
+#regForm {
+  background-color: #0042657a;
+  margin: 125px auto;
+  padding: 40px;
+  width: 80%;
+  min-width: 300px;
+  height: 775px !important;
+}
+#regForm h1{
+    text-align: center;
+    font-size: 67px;
+    font-family: -webkit-body;
+    letter-spacing: 2px;    
+    color: #fff;
+}
+#regForm h2{
+    color:#fff;
+    text-align: center;
+    font-family: unset;
+    letter-spacing: 2px;
+    font-size: 29px;
+    margin-bottom: 40px;
+    margin-top: 100px;
+}
+.img-thumbnail {
+    background-color: #fff;
+    border: 5px solid #1771a9;
+    border-radius: 1.25rem;
+}
+#nextBtn,#prevBtn{
+    text-align: center;
+    background: rgba(23, 113, 169, 0.7) !important;
+    margin: 0 10px;
+    margin-top: 60px;
+    padding: 5px 26px !important;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    border-radius: 38px;
+    text-shadow: 2px 2px #000;
+        border: 2px solid;
+}
+#nextBtn:hover ,#prevBtn:hover{
+    background: rgb(0, 71, 115) !important;
+    text-decoration: none;
+}
+#nextBtn:focus ,#prevBtn:focus{
+    outline-color: transparent;
+    outline-style: none;
+}
+#address h2{
+    text-align: center;
+    font-family: unset;
+    letter-spacing: 2px;
+    font-size: 29px;
+    margin-bottom: 25px;
+    margin-top: 80px;
+}
+#address input {
+    margin: 10px;
+    width: 50%;
+    color: #fff;
+    font-size: 20px;
+    margin:10px;
+    width: 50%;
+}
+#address .adrs h2{
+    margin-bottom: 7px !important;
+    margin-top: 32px !important;
+}
+.mt-lg {
+    margin-top: 100px !important;
+    margin-bottom: 100px !important;
+}
+
+/* Style the input fields */
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #fff;
+  border: none; 
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #fff;
+}
+.html-input-range-custom .hir-tracker-bg {
+    background-color: #0078c1 !important;
+}
+.html-input-range-custom .hir-tracker-thumb, .html-input-range-custom .hir-tracker-thumb::after {
+    background-color: #ffffff !important;
+}
+
+
+.img-thumbnail {
+    background-color: #fff !important;
+    border: 5px solid #1771a9 !important;
+    border-radius: 1.25rem !important;
+}
+.img-thumbnail:hover {
+    border: 5px solid gray !important;
+}
+.selected {
+    border: 5px solid #28a745!important;
+}
+.html-inupt-range {
+    width: 72%;
+}
+.step {
+    background-color: #fff !important;
+}
+
+
+      /*NEW SECTION GET MORE CSS*/
+
+#getmore h1{
+    color: #585858;
+    letter-spacing: 0px;
+    font-weight: bold;
+    font-family: initial;
+    padding-top: 50px;
+}
+#getmore .fa{
+    font-size: 40px;
+    padding-top: 40px;
+    padding-bottom: 5px;
+    color: #16b0fe;
+}
+#getmore h3{
+    color: #585858;
+    font-weight: bold;
+    font-size: 20px;
+}
+#getmore h5{
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #3c3c3c;
+    padding-bottom: 30px;
+}
+.p-b-30{
+  padding-bottom: 30px;
+}
+.footer h6{
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-align: justify;
+    padding: 0 16px;
+    line-height: 22px;
+}
+.footer .fa-home{
+    color: #fff !important;
+    font-size: 17px;
+    margin-left: 16px;
+}
+.footer .fa{
+    color: #fff;
+    font-size: 18px;
+    margin-left: 1px;
+}
+.main_footer .flowus a i {
+    font-size: 2rem;
+    padding: 5px;
+    width: 40px;
+    text-align: left;
+}
+.copyright_text p {
+    font-size: 15px;
+}
+.footer h5{
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.footer p{
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+.footer h5:hover,p:hover{
+  color:#16b0fe;
+}
+.footer a{
+  text-decoration: none !important;
+}
+#questions{
+  background-color: #f5f2f2;
+}
+#questions h2{
+    font-family: -webkit-body;
+    letter-spacing: 1px;
+    padding-top: 55px;
+    color: #326c92;
+}
+#questions h1{
+    font-weight: bold;
+    letter-spacing: 0;
+    font-family: serif;
+    padding-bottom: 30px;
+    color:#585858;
+}
+#questions .fa{
+    font-size: 40px;
+    padding-top: 40px;
+    padding-bottom: 5px;
+    color: #326c92;
+}
+#questions h3{
+    color: #16b0fe;
+    font-size: 22px;
+}
+#questions h6{
+    font-size: 15px;
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 70px;
+}
+#questions .col-md-3{
+    border: 1px solid lightgray;
+    width: 21%;
+    margin: 2%;
+    height: 365px;
+    margin-bottom: 90px;
+}
+#questions .col-md-3 a{
+  text-decoration: none;
+}
+#questions .col-md-3:hover{
+  background: #dcdbdb;
+  border: 1px solid #16b0fe;
+}
+.main_home p {
+    max-width: 80%;
+    font-size: 18px;
+    line-height: inherit;
+}
+
+
+
+
+
+
+
+#contatti{
+  background-color: #70c3be;
+  letter-spacing: 2px;
+  }
+#contatti a{
+  color: #fff;
+  text-decoration: none;
+}
+
+
+@media (max-width: 575.98px) {
+
+  #contatti{padding-bottom: 800px;}
+  #contatti .maps iframe{
+    width: 100%;
+    height: 450px;
+  }
+ }
+
+
+@media (min-width: 576px) {
+
+   #contatti{padding-bottom: 800px;}
+
+   #contatti .maps iframe{
+     width: 100%;
+     height: 450px;
+   }
+ }
+
+@media (min-width: 768px) {
+
+  #contatti{padding-bottom: 350px;}
+
+  #contatti .maps iframe{
+    width: 100%;
+    height: 850px;
+  }
+}
+
+@media (min-width: 992px) {
+  #contatti{padding-bottom: 200px;}
+
+   #contatti .maps iframe{
+     width: 100%;
+     height: 700px;
+   }
+}
+
+
+#author a{
+  color: #fff;
+  text-decoration: none;
+    
+}
+
+
+
+
+
+
+
+
+      /*CSS OF TERMS AND SERVICE PAGHE;*/
+
+
+#terms{
+  margin:30px;
+}      
+#terms a{
+    float: right;
+    font-size: 20px;
+}
+#privacy{
+  margin:30px;
+}      
+#privacy a{
+    float: right;
+    font-size: 20px;
+}
+#contact{
+  margin-top: 250px;
+  height:500px;
+}
+#minheight .home_skew_border {
+    height: 386px;
+}
+#minheight .main_home {
+    padding-top: 85px;
+}
+#minheight h1{
+  margin-bottom: 0px;
+  margin-top: 75px;
+}
+#minheight .main_home p{
+  padding-bottom: 0 !important;
+}
+#minheight .btn-group-lg>.btn, .btn-lg {
+    padding: 4px 20px;
+}
+#contact .input-group{
+  padding-bottom: 30px;
+  width: 50%;
+  margin:0 auto;
+}
+/*#percent input{
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    width: 40%;
+    font-size: 20px;
+    padding: 10px;
+}*/
+#percentage select{
+    background: transparent;
+    padding: 15px;
+    color: #fff;
+    font-size: 20px;
+}
+#percentage option{
+  background: #135176;
+}
+#address .valuee input{
+  margin-top: 70px;
+  margin-bottom: 100px;
+}
